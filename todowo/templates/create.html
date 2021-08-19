@@ -1,0 +1,20 @@
+{% extends 'base.html' %} 
+
+{% block content %}
+<div class="row justify-content-center mt-5">
+        <div class="col-md-7 text-center">
+<h2>Create</h2>
+{% if error %}
+                <div class="alert alert-danger mt-3" role="alert">
+                    {{ error }}
+                </div>
+            {% endif %}
+<form method="POST">
+{% csrf_token %}
+{{  form.as_p }}
+
+<button type="submit" class="btn btn-primary">Create</button>
+</form>
+</div>
+</div>
+{% endblock content %}

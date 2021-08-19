@@ -1,0 +1,25 @@
+curl -X "POST" http://127.0.0.1:8000/api/signup -H 'Content-Type: application/json' -d '{"username":"user123","emailid":"user@gmail.com",password":"qwerty007"}'
+
+
+curl -X "POST" http://127.0.0.1:8000/api/signup -H 'Content-Type: application/json' -d '{"username":"user123",password":"qwerty007"}'
+
+
+curl -X POST http://127.0.0.1:8000/api/signup -H 'Content-Type:application/json' -d "{\"username\":\"user123\",\"password\":\"qwerty007\"}
+
+curl -X POST http://127.0.0.1:8000/api/signup -H 'Content-Type:application/json' -d "{\"username\":\"joker\",\"password\":\"qwerty007\"}
+curl -X POST http://127.0.0.1:8000/api/signup -H 'Content-Type:application/json' -d "{\"username\":\"joker\",\"email\":\"joker@gmail.com\",\"password\":\"qwerty007\"}
+
+curl -X POST http://127.0.0.1:8000/api/signup -H 'Content-Type:application/json' -d "{\"username\":\"joker2\",\"email\":\"joker2@gmail.com\",\"password\":\"qwerty007\"}
+
+
+curl -X POST http://127.0.0.1:8000/api/login -H 'Content-Type:application/json' -d "{\"username\":\"joker\",\"password\":\"qwerty007\"}
+
+curl -X POST http://127.0.0.1:8000/api/login -H 'Authorization: Token fd9966548a0ccfdb0859423082b479975d75ccf2'
+
+curl -X  http://127.0.0.1:8000/api/todos -H "Authorization: Token fd9966548a0ccfdb0859423082b479975d75ccf2"
+
+curl -H "Authorization: Token fd9966548a0ccfdb0859423082b479975d75ccf2" http://127.0.0.1:8000/api/todos
+curl -H "Authorization: Token 62f087086541c0f1bf28b8aeef8905987e95b64f" http://127.0.0.1:8000/api/todos
+
+
+curl -X PUT http://127.0.0.1:8000/api/todos/1/complete -H 'Content-Type:application/json' -H "Authorization: Token a0c4e58dd934fc039f2c6b441d71f79940b83084"

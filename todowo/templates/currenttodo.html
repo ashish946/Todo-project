@@ -1,0 +1,18 @@
+{% extends 'base.html' %} 
+{% block content %}
+<div class="row justify-content-center mt-5">
+        <div class="col-md-7 text-center">
+<h3>Current</h3>
+<ul style="list-style-type:none;">
+{% for i in todos %}
+<a href="{% url 'viewtodo' i.id %}" style="text-decoration: none; color:black">
+<li>{% if i.important %}<b>{% endif %}{{ i.title }}{% if i.important %}</b>{% endif %}
+    {% if i.memo %} - {{ i.memo|truncatechars:30 }}{% endif %}
+</li>
+</a>
+{% endfor %}
+</ul>
+
+</div>
+</div>
+{% endblock content %}
